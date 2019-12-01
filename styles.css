@@ -1,0 +1,89 @@
+/**** research order for mobile size starting here https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/CSS_Grid_Layout_and_Accessibility ***/
+/*********** GLOBAL STYLES & DEFAULTS ***********/
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  height: 100vh;
+  overflow: auto;
+}
+
+/* body defaults */
+body {
+  font-family: 'Public Sans', sans-serif;
+  height: 100vh;
+  overflow: auto;
+}
+
+/* global resets */
+html,
+body,
+h1,
+h2,
+p,
+button {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+/* Page wrapper defaults */
+.page-wrapper {
+  background-color: green;
+  display: flex;
+  flex-flow: column nowrap;
+  height: inherit;
+}
+
+/*** GRID CONTATINER GLOBAL STYLES ***/
+.grid-container {
+  background-color: black;
+  border: solid 2px black;
+  display: grid;
+}
+
+.col-one {
+  grid-column: 1/2;
+  border: solid 1px black;
+  background-color: lightpink;
+}
+.col-two {
+  background-color: blue;
+  border: solid 1px black;
+}
+
+/*** HEADER & FOOTER GLOBAL STYLES ***/
+.header,
+.footer{
+  color: white;
+  background-color: red;
+  grid-column: 1/3;
+}
+
+/****** MEDIA BREAKPOINTS ******/
+/*** MOBILE STYLES ***/
+@media (min-width: 375px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+  .col-two {
+    grid-column: 1/2;
+  }
+
+  .header {
+  }
+
+}
+
+/*** DESKTOP STYLES ***/
+@media (min-width: 1200px) {
+  .grid-container {
+    grid-template-columns: 1fr 1fr;
+  }
+  .col-two {
+    grid-column: 2/3;
+  }
+
+}
